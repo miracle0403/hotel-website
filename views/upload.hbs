@@ -1,0 +1,371 @@
+<h3 class = "h3 text-center text-success" id = "h3"><b>{{title}}</b></h3>
+
+
+<div class = "row">
+	<div class = "col-md-6">
+		<h3 class = "h5 text-center text-success" id = "h5"><b>CREATE NEW EVENT</b></h5>
+		{{#if createeventsuccess}}
+		<div class = "alert alert-success">
+		{{createeventsuccess}}
+		</div>
+		{{/if}}
+		{{#if createeventerror}}
+		<div class = "alert alert-error">
+		{{createeventerror}}
+		</div>
+		{{/if}}
+			<form method ="POST" enctype="multipart/form-data" id = "formupload"  action ="/createEvent">
+		<div class="container-fluid"> 	
+		<div class = "form-row">
+		<div class="form-group col-md-6">
+				<label for="event">Event Name</label>
+				<input type="text" class="form-control" id="name" name ="name" placeholder="Enter Event name here" required />
+			</div>
+			<div class="form-group col-md-6">
+				<label for="venue">Venue</label>
+				<input type="text" class="form-control" id="venue" name ="venue" placeholder="Enter Venue" required />
+			</div>
+			</div>
+			<div class = "form-row">
+			<div class="form-group col-md-6">
+				<label for="startevent">Start Event</label>
+				<input type="date" class="form-control" id="startdate" name ="startdate" value="Enter Start Date" required />
+			</div>
+			<div class="form-group col-md-6">
+				<label for="startevent">Start Event</label>
+				<input type="time" class="form-control" id="starttime" name ="starttime" value="Enter Start Time" required />
+			</div>
+			</div>
+			<div class = "form-row">
+			<div class="form-group col-md-6">
+				<label for="startevent">Stop Event</label>
+				<input type="date" class="form-control" id="startdate" name ="stopdate" value="Enter Stop Date" required />
+			</div>
+			<div class="form-group col-md-6">
+				<label for="startevent">Stop Event</label>
+				<input type="time" class="form-control" id="starttime" name ="stoptime" value="Enter Stop Time" required />
+			</div>
+			</div>
+			<div class="form-group">
+			<div id = "pic"></div>
+				<label for="img">Product Image</label>
+				<input type="file" class="form-control-file" id="Picture" name ="img" placeholder="Click here" required />
+				</div><br>
+	<div id = "fileerror" class = "alert alert-danger"></div> <div class = "alert alert-info" id = "progress"></div>
+		</div>
+		<!--
+		<div class = "form-group">
+		<img src = "" class = "img-fluid" id ="imagepic">
+		</div>						-->
+			<div class="form-group">
+				<label for="description">Event Description</label>
+				<textarea class="form-control" id="description" rows = "6" name ="description" placeholder="Enter description here"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Submit</button>
+				<span id = "status"></status>
+				<br><br>
+			</div>
+		
+		</form>
+	</div>
+	
+	
+	<div class = "col-md-6">
+		<h3 class = "h5 text-center text-success" id = "h5"><b>ADD NEW MESSAGE</b></h5>
+		{{#if messagesuccess}}
+		<div class = "alert alert-success">
+		{{messagesuccess}}
+		</div>
+		{{/if}}
+		<form method ="POST" enctype="multipart/form-data" id = "formupload"  action ="/newmessage">
+		<div class="container-fluid"> 	
+		<div class = "form-row">
+		<div class="form-group col-md-6">
+				<label for="event">Message Title</label>
+				<input type="text" class="form-control" id="name" name ="messagetitle" placeholder="Enter Event Title here" required />
+			</div>
+			<div class="form-group col-md-6">
+				<label for="venue">Minister</label>
+				<input type="text" class="form-control" id="venue" name ="minister" placeholder="Enter Minister's Name" required />
+			</div>
+			</div>
+			<div class ="row">
+			<div class="form-group col-md-6">
+				<label for="startevent">Date Preached</label>
+				<input type="date" class="form-control" id="date" name ="date" value="Enter Start Date" required />
+			</div>
+			<div class="form-group col-md-6">
+				<label for="startevent">Time Preached</label>
+				<input type="time" class="form-control" id="time" name ="time" value="Enter Start Time" required />
+			</div>
+			</div>
+			<div class="form-group">
+				<label for="link">Link</label>
+				<input type="link" class="form-control" id="link" name ="link" placeholder="Enter Message Link" required />
+			</div>
+			<div class="form-group">
+			<div id = "pic"></div>
+				<label for="vid">Promo Medium</label>
+				<input type="file" class="form-control-file" id="vid" name ="vid" placeholder="Click here" required />
+				</div><br>
+	<div id = "vider" class = "alert alert-danger"></div> <div class = "alert alert-info" id = "vidprogress"></div>
+		</div>
+		<!--
+		<div class = "form-group">
+		<img src = "" class = "img-fluid" id ="imagepic">
+		</div>						-->
+			<div class="form-group">
+				<label for="description">Short Message</label>
+				<textarea class="form-control" id="description" rows = "6" name ="description" placeholder="Enter description here"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Submit</button>
+				<span id = "status"></status>
+				<br><br>
+			</div>
+		
+		</form>
+	</div>
+</div>
+
+<br>
+<div class = "row">
+	<div class = "col-md-6">
+	<h3 class = "h5 text-center text-success" id = "h5"><b>DEVOTIONAL</b></h5>
+	<form method ="POST" action ="/adddevotional">
+	{{#if devoerror}}
+		<div class = "alert alert-danger">
+		{{devoerror}}
+		</div>
+		{{/if}}
+		{{#if devosuccess}}
+		<div class = "alert alert-success">
+		{{devosuccess}}
+		</div>
+		{{/if}}
+			<div class = "row">
+			<div class="form-group col-md-6">
+				<label for="product">Topic</label>
+				<input type="text" class="form-control" id="topic" name ="topic" placeholder="Enter Topic" required />
+			</div>
+			<div class="form-group col-md-6">
+				<label for="date">Date</label>
+				<input type="date" class="form-control" id="topic" name ="date" placeholder="Enter Date" required />
+			</div>
+			</div>
+			<div class="form-group">
+				<label for="description">Message</label>
+				<textarea class="form-control" id="description" cols = "15" rows = "8" name ="description" placeholder="Enter description here"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Submit</button><br><br>
+			</div>
+		</div>	
+	</form>
+	<div class = "col-md-6">
+	<h3 class = "h5 text-center text-success" id = "h5"><b>AFFIRMATION</b></h5>
+	<form method ="POST" action ="/addaffirmation">
+	{{#if affirerror}}
+		<div class = "alert alert-danger">
+		{{affirerror}}
+		</div>
+		{{/if}}
+		{{#if affirsuccess}}
+		<div class = "alert alert-success">
+		{{affirsuccess}}
+		</div>
+		{{/if}}
+			<div class = "row">
+			<div class="form-group col-md-6">
+				<label for="product">Topic</label>
+				<input type="text" class="form-control" id="topic" name ="topic" placeholder="Enter Topic" required />
+			</div>
+			<div class="form-group col-md-6">
+				<label for="date">Date</label>
+				<input type="date" class="form-control" id="topic" name ="date" placeholder="Enter Date" required />
+			</div>
+			</div>
+			<div class="form-group">
+				<label for="description">Message</label>
+				<textarea class="form-control" id="description" cols = "15" rows = "8" name ="description" placeholder="Enter description here"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Submit</button><br><br>
+			</div>
+		</div>	
+	</form>
+	</div>
+
+<div class = "row">
+	<div class = "col-md-6">
+	<h3 class = "h5 text-center text-success" id = "h5"><b>ADD LOVE WORLD NEWS</b></h5>
+	<form method ="POST" action ="/addlwnews">
+	{{#if lwerror}}
+		<div class = "alert alert-error">
+		{{lwerror}}
+		</div>
+		{{/if}}
+		{{#if lwsuccess}}
+		<div class = "alert alert-success">
+		{{lwsuccess}}
+		</div>
+		{{/if}}
+			<div class = "row">
+			<div class="form-group col-md-6">
+				<label for="product">Topic</label>
+				<input type="text" class="form-control" id="topic" name ="topic" placeholder="Enter Topic" required />
+			</div>
+			<div class="form-group col-md-6">
+				<label for="link">Link</label>
+				<input type="text" class="form-control" id="link" name ="link" placeholder="Enter Link" required />
+			</div>
+			</div>
+			<div class="form-group">
+				<label for="description">Message</label>
+				<textarea class="form-control" id="description" cols = "15" rows = "8" name ="description" placeholder="Enter description here"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Submit</button><br><br>
+			</div>	
+	</form>
+	</div>
+	<div class = "col-md-6">
+	<h3 class = "h5 text-center text-success" id = "h5"><b>ADD NATIONAL NEWS</b></h5>
+	<form method ="POST" action ="/addnlnews">
+	{{#if nlerror}}
+		<div class = "alert alert-error">
+		{{nlerror}}
+		</div>
+		{{/if}}
+		{{#if nlsuccess}}
+		<div class = "alert alert-success">
+		{{nlsuccess}}
+		</div>
+		{{/if}}
+			<div class = "row">
+			<div class="form-group col-md-6">
+				<label for="product">Topic</label>
+				<input type="text" class="form-control" id="topic" name ="topic" placeholder="Enter Topic" required />
+			</div>
+			
+			<div class="form-group col-md-6">
+				<label for="link">Link</label>
+				<input type="text" class="form-control" id="link" name ="link" placeholder="Enter Link" required />
+			</div>
+			</div>
+			<div class="form-group">
+				<label for="description">Message</label>
+				<textarea class="form-control" id="description" cols = "15" rows = "8" name ="description" placeholder="Enter description here"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Submit</button><br><br>
+			</div>
+		</div>	
+	</form>
+	</div>
+
+	
+<div class = "row">
+	<div class = "col-md-6">
+		<h3 class = "h5 text-center text-success" id = "h5"><b>ADD ADMIN</b></h5>
+		{{#if addsuccess}}
+		<div id = "stats" class = "container alert alert-success">
+		{{addsuccess}}
+		</div>
+		{{/if}}
+		{{#if adderror}}
+		<div id = "stats" class = "container alert alert-danger">
+		{{adderror}}
+		</div>
+		{{/if}}
+		<form method ="POST" action ="/addadmin">
+		<div class="form-group ">
+				<label for="addadmin">User Id</label>
+				<input type="number" class="form-control" id="user" name ="user" placeholder="Enter user id" required />
+			</div>
+			
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Submit</button>
+				</div>
+		</form>
+	</div>
+	<div class = "col-md-6">
+		<h3 class = "h5 text-center text-success" id = "h5"><b>DELETE ADMIN</b></h5>
+		{{#if adminsuccess}}
+		<div id = "stats" class = " container alert alert-success">
+		{{adminsuccess}}
+		</div>
+		{{/if}}
+		{{#if adminerror}}
+		<div id = "stats" class = "container alert alert-danger">
+		{{adminerror}}
+		</div>
+		{{/if}}
+		<form method ="POST" action ="/deladmin">
+			<div class="form-group">
+				<label for="product">User id</label>
+				<input type="number" class="form-control" id="user id" name ="user" placeholder="Enter user id" required />
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Submit</button><br><br>
+			</div>
+		</form>
+	</div>
+</div>
+	
+	<div class = "row">
+		<div class = "col-md-6">
+			<h3 class = "h5 text-center text-success" id = "h5"><b>UPDATE EVENT STATUS</b></h5>
+		{{#if statussuccess}}
+		<div id = "stats" class = " container alert alert-success">
+		{{statussuccess}}
+		</div>
+		{{/if}}
+		<form method ="POST" action ="/eventstatus">
+		
+			<div class="form-group>
+				<label for="product">Event Id</label>
+				<input type="number" class="form-control" id="event_id" name ="id" placeholder="Enter Event id" required />
+			</div>
+			<br>
+			<div class="form-group">
+			<label for="status">Status</label>
+				<select class = "form-control" name = "eventstatus">
+					
+					<option>Up Coming</option>
+					<option>Past</option>
+				</select>
+			
+			</div>
+			<br>
+			<div class="form-group">
+				<button id = "update" type="submit" class="btn btn-success">Submit</button>
+				</div>
+		</form>
+		</div>
+		<div class = "col-md-6">
+		<form method ="POST" action ="/quotes">
+			<h3 class = "h5 text-center text-success" id = "h5"><b>ADD QUOTES</b></h5>
+		{{#if qusuccess}}
+		<div id = "stats" class = " container alert alert-success">
+		{{qusuccess}}
+		</div>
+		{{/if}}
+		
+		<div class="form-group">
+				<label for="speaker">Speaker</label>
+				<input type="text" class="form-control" id="speaker" name ="speaker" placeholder="Enter Speaker's name" required />
+			</div>
+			<div class="form-group">
+				<label for="description">Quote</label>
+				<textarea class="form-control" id="description"  name ="quote" placeholder="Enter quote"></textarea>
+			</div>
+			<div class="form-group">
+				<button id = "update" type="submit" class="btn btn-success">Submit</button>
+				</div>
+		</form>
+		</div>
+	</div>
+	
+	</div>

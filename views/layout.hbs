@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- CSS -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/bootstrap/css/google.css">
+	<link rel="stylesheet" href="/themify-icons/themify-icons.css">
+	<link rel="stylesheet" href="/bootstrap/css/mimi.css">
+	<link rel="stylesheet" href="/bootstrap/css/blog.css">
+	  <!--Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="">
+{{> mainseo}}
+    
+  </head>
+  <body class = "bg bg-light">
+  <div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="/">CHURCH</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+	{{#if admin}}
+	   <a class="p-2 text-muted" href="/admin">Admin</a>
+	  {{/if}}
+      <a class="p-2 text-muted" href="/">Home</a>
+      <a class="p-2 text-muted" href="/rooms">Our Rooms</a>
+      {{#if isAuthenticated}}
+	   <a class="p-2 text-muted" href="/logout">Log Out</a>
+	  {{else}}
+		 <a class="p-2 text-muted" href="/login"> Sign In</a>
+      <a class="p-2 text-muted" href="/register">Sign Up</a>
+	  {{/if}}
+    </nav>
+  </div>
+  
+  <div class="jumbotron p-4 p-md-5 text-white rounded bg-success">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+    </div>
+  </div>
+  
+  
+  
+  {{{body}}}
+  <footer class="blog-footer">
+  <p>Website Development by <a href="https://cheapwebscripts.com/" target = "_blank">CHEAP WEB SCRIPTS</a> <a href="tel: +2348061179366">0806 117 9366</a>.</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+  </div>
+  </body>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="/bootstrap/js/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src ="/bootstrap/js/ajax.js"></script>
+  </html>

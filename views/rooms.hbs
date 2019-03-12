@@ -1,0 +1,49 @@
+ {{#if error}}
+  <div class="alert alert-danger">
+    {{error}}
+  </div>
+  {{/if}}
+  {{#if success}}
+  <div class="alert alert-success">
+    {{success}}
+  </div>
+  {{/if}}
+  {{#if errors}}
+  {{#each errors}}
+  <div class="alert alert-danger">
+    {{this.msg}}
+  </div>
+  {{/each}}
+{{/if}}
+
+  <div class = "container">
+    <div class="text-center"> 
+    
+        <b><h4 class = "h4 text-center text-success">{{title}}</b></h4>
+        
+ </div>
+ 
+<form method ="POST" action ="/joinevent">
+	<div class="form-group">
+		<label for = "category">Room Category</label>
+		<select class = "form-control" id = "room_category" name = "category">
+			{{#if rooms}}
+			{{#each rooms}}
+				<option></option>
+				<option>{{category}}</option>
+				{{/each}}
+			{{/if}}
+		</select>
+	</div>
+	<div class = "form-row">
+		<div class = "form-group col-md-6">
+			<label for = "category">Room Number</label>
+			<select class = "form-control" name = "roomNum">
+				<div id = "roomNum"></div>
+			</select>
+		</div>
+		<div class = "form-group col-md-6">
+		</div>
+	</diiv>
+	</div>
+ </form>

@@ -1,0 +1,278 @@
+<div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">National News</strong>
+          <h3 class="mb-0">Featured post</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Loveworld News</strong>
+          <h3 class="mb-0">Featured Post</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 text-success border-bottom" id  = "messages">
+        PASTOR'S MESSAGES
+      </h3>
+	  
+	  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {{#if messages}}
+			{{#each messages}}
+			
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src = "{{video}}" class = "img-fluid">
+			<div class="card-body">
+              <p class="card-text">{{description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href = "{{link}}" target = "_blank"><button type="button" class="btn btn-sm btn-success">Get video</button></a>
+                  
+                </div>
+                <small class="text-muted">Now</small>
+              </div>
+            </div>
+          </div>
+        </div>
+		{{/each}}
+		{{/if}}
+      </div>
+    </div>
+  </div>
+	<h3 class="pb-4 mb-4 text-success border-bottom" id = "events">
+        UPCOMING EVENTS
+      </h3>
+		<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {{#if events}}
+		{{#each events}}
+		
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src = "{{image}}" class = "img-fluid">
+			<div class="card-body">
+              <p class="card-text">{{description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href = "/events" target = "_blank"><button type="button" class="btn btn-sm btn-success">Join Event</button></a>
+                  </div>
+                <small class="text-muted">Now</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+		{{/if}}
+      </div>
+    </div>
+  </div>
+  <h3 class="pb-4 mb-4 text-success border-bottom" id = "LoveWorldNews">
+        Love World News
+      </h3>
+	  
+	  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {{#if loveworld}}
+		{{#each loveworld}}
+		
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-text text-success">{{Topic}}</h5>
+			  <p class="card-text">{{highlights}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href = "{{link}}" target = "_blank"><button type="button" class="btn btn-sm btn-success">Read More</button></p>
+                  
+                </div>
+                <small class="text-muted">now</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+		{{/if}}
+      </div>
+    </div>
+  </div>
+  <h3 class="pb-4 mb-4 text-success border-bottom" id = "NationalNews">
+        TOP NATIONAL HEADLINES
+      </h3>
+	  
+	  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {{#if nationalNews}}
+		{{#each nationalNews}}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+			<h5 class="card-text text-success">{{Topic}}</h5>
+              <p class="card-text">{{news}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href = "{{link}}" target = "_blank"><button type="button" class="btn btn-sm btn-success">Read More</button></a>
+                  </div>
+                <small class="text-muted">Now</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+		{{/if}}
+      </div>
+    </div>
+  </div>
+	  <!-- all other contents -->
+</div><!-- /.blog-main -->
+
+    <aside class="col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-bold" id = "about">About Us</h4>
+        <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+      </div>
+<div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-bold">Locate Us</h4>
+        <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+      </div>
+	  
+	  <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-bold" id = "Affirmation">Affirmation</h4>
+        <ol class="list-unstyled mb-0">
+			{{#if affirmation}}
+			{{#each affirmation}}
+          <li><a href="/affirmation/{{Topic}}">{{Topic}}</a></li>
+          {{/each}}
+		  {{/if}}
+        </ol>
+		</div>
+	  
+	  
+      <div class="p-4">
+        <h4 class="font-italic">Loveworld Archives</h4>
+        <ol class="list-unstyled mb-0">
+          <li><a href="#">March 2014</a></li>
+          <li><a href="#">February 2014</a></li>
+          <li><a href="#">January 2014</a></li>
+          <li><a href="#">December 2013</a></li>
+          <li><a href="#">November 2013</a></li>
+          <li><a href="#">October 2013</a></li>
+          <li><a href="#">September 2013</a></li>
+          <li><a href="#">August 2013</a></li>
+          <li><a href="#">July 2013</a></li>
+          <li><a href="#">June 2013</a></li>
+          <li><a href="#">May 2013</a></li>
+          <li><a href="#">April 2013</a></li>
+        </ol>
+      </div>
+	  
+	  <div class="p-4">
+        <h4 class="font-italic">National Archives</h4>
+        <ol class="list-unstyled mb-0">
+          <li><a href="#">March 2014</a></li>
+          <li><a href="#">February 2014</a></li>
+          <li><a href="#">January 2014</a></li>
+          <li><a href="#">December 2013</a></li>
+          <li><a href="#">November 2013</a></li>
+          <li><a href="#">October 2013</a></li>
+          <li><a href="#">September 2013</a></li>
+          <li><a href="#">August 2013</a></li>
+          <li><a href="#">July 2013</a></li>
+          <li><a href="#">June 2013</a></li>
+          <li><a href="#">May 2013</a></li>
+          <li><a href="#">April 2013</a></li>
+        </ol>
+      </div>
+	  
+	  <div class="p-4">
+        <h4 class="font-italic" id = "devotional">DEVOTIONAL</h4>
+        <ol class="list-unstyled mb-0">
+			{{#if devotional}}
+			{{#each devotional}}
+          <li><a href="/devotional/{{Topic}}">{{Topic}}</a></li>
+          {{/each}}
+		  {{/if}}
+        </ol>
+      </div>
+
+	  <div class="p-4">
+        <h4 class="font-italic" id = "fun">RIDDLES</h4>
+        <ol class="list-unstyled mb-0">
+    
+          <li><a href="#">October 2013</a></li>
+          <li><a href="#">September 2013</a></li>
+          <li><a href="#">August 2013</a></li>
+          <li><a href="#">July 2013</a></li>
+          <li><a href="#">June 2013</a></li>
+          <li><a href="#">May 2013</a></li>
+          <li><a href="#">April 2013</a></li>
+        </ol>
+      </div>
+	  
+	  <div class="p-4">
+        <h4 class="font-italic">JOKES</h4>
+        <ol class="list-unstyled mb-0">
+    
+          <li><a href="#">October 2013</a></li>
+          <li><a href="#">September 2013</a></li>
+          <li><a href="#">August 2013</a></li>
+          <li><a href="#">July 2013</a></li>
+          <li><a href="#">June 2013</a></li>
+          <li><a href="#">May 2013</a></li>
+          <li><a href="#">April 2013</a></li>
+        </ol>
+      </div>
+	  <div class="p-4">
+        <h4 class="font-italic">QUOTE</h4>
+        
+		{{#if quotes}}
+		{{#each quotes}}
+		<quote>{{quotes}}</quote>
+		<cite> {{speaker}}</cite>
+		{{/each}}
+		{{/if}}
+          
+      </div>
+      <div class="p-4">
+        <h4 class="font-italic" id = "contact">Contact Us</h4>
+        <ol class="list-unstyled">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Kings Chat</a></li>
+        </ol>
+      </div>
+    </aside><!-- /.blog-sidebar -->
+
+  </div><!-- /.row -->
+
+</main><!-- /.container -->
